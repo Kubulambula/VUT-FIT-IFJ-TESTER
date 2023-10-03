@@ -194,7 +194,7 @@ def run_tests(tests_to_be_run, compiler_path, interpreter_path, compiler_timeout
 			tests_passed += 1
 			print("[" + GREEN + " OK " + WHITE + "] " + "/".join(test.split("/")[-2::]))
 	
-	passed_percentage = round(100 * tests_passed / len(tests_to_be_run))
+	passed_percentage = round(100 * tests_passed / max(len(tests_to_be_run), 1))
 	percentage_color = GREEN if passed_percentage > 75.0 else YELLOW if passed_percentage > 50.0 else RED
 	print("\nSummary:	" + percentage_color + str(passed_percentage) + "%" + WHITE)
 	print(BLUE + "TOTAL:		" + WHITE + str(len(tests_to_be_run)))
