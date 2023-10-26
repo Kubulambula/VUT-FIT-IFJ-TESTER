@@ -1,0 +1,10 @@
+/*
+This
+multiline
+/* /* NESTED */ */
+comment
+is
+/* UNTERMINATED */
+and
+shoul
+fail
