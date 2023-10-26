@@ -1,2 +1,6 @@
-var x: int = 1 + 1
-print(x)
+/* This 
+/* NESTED */
+comment
+is
+on
+/* E /* O /* F */ */ */

@@ -64,6 +64,7 @@ HOW IT WORKS:
 		- return - OPTIONAL
 			The expected return codes for compiler and interpreter (in this order).
 			Must be int values on separate lines.
+			If expected interpreter code is -1, that means, that interpreter check should be skipped.
 		
 		- code.ifjcode - GENERATED
 			The compiled code.ifj used as a temporary file for the interpreter.
@@ -223,6 +224,10 @@ def run_test(test_to_be_run, compiler_path, interpreter_path, compiler_timeout, 
 		return True
 
 	# Run interpreter
+	if expected_return_codes[1] == -1:
+		if VERBOSE:
+			print("	Interpreter skipped because of expected return code '-1'. Considering test as passed...")
+		return True
 	if len(interpreter_path) == 0:
 		if VERBOSE:
 			print("	Interpreter path was not specified. Considering test as passed...")
